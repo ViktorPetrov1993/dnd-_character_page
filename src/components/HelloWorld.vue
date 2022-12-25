@@ -1,55 +1,75 @@
 <template>
-  <section class="header">
-    <div class="header_content">
-      <div class="header_content_rightpart">
-        <div class="header_content_rightpart_textwithbtn">
-          <input type="text" class="textinput" />
+  <section class="">
+    <div class="header">
+      <div class="header_rightpart">
+        <div class="header_rightpart-textwithbtn">
+          <input type="text" class="input" />
           <button class="add">add</button>
         </div>
         <div class="menutextl">CHARACTER NAME</div>
       </div>
-      <div class="header_content_leftpart">
-        <div class="header_content_leftpart_rowblock">
-          <div class="header_content_leftpart_rowblock_textfiled">
-            <div class="header_content_leftpart_rowblock_textfiled_textwithbtn">
-              <input type="text" class="textinput" />
+      <div class="header_leftpart">
+        <div class="firstrow">
+          <div class="firstrow_content">
+            <div class="firstrow_content-textwithbtn">
+              <select class="select" name="CLASS" id="">
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+              </select>
               <button class="add">add</button>
             </div>
-            <div class="menutextl">CLASS & LEVEL</div>
+            <div class="menutextl">CLASS</div>
           </div>
-          <div class="header_content_leftpart_rowblock_textfiled">
-            <div class="header_content_leftpart_rowblock_textfiled_textwithbtn">
-              <input type="text" class="textinput" />
+          <div class="firstrow_content">
+            <div class="firstrow_content-textwithbtn">
+              <select class="select" name="CLASS" id="">
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+              </select>
               <button class="add">add</button>
             </div>
             <div class="menutextl">BACKGROUND</div>
           </div>
-          <div class="header_content_leftpart_rowblock_textfiled">
-            <div class="header_content_leftpart_rowblock_textfiled_textwithbtn">
-              <input type="text" class="textinput" />
+          <div class="firstrow_content">
+            <div class="firstrow_content-textwithbtn">
+              <input type="text" class="smallinput" />
               <button class="add">add</button>
             </div>
             <div class="menutextl">PLAYER NAME</div>
           </div>
         </div>
-        <div class="header_content_leftpart_rowblock">
-          <div class="header_content_leftpart_rowblock_textfiled">
-            <div class="header_content_leftpart_rowblock_textfiled_textwithbtn">
-              <input type="text" class="textinput" />
+        <div class="secondrow">
+          <div class="firstrow_content">
+            <div class="firstrow_content-textwithbtn">
+              <select class="select" name="CLASS" id="">
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+              </select>
               <button class="add">add</button>
             </div>
             <div class="menutextl">RACE</div>
           </div>
-          <div class="header_content_leftpart_rowblock_textfiled">
-            <div class="header_content_leftpart_rowblock_textfiled_textwithbtn">
-              <input type="text" class="textinput" />
+          <div class="firstrow_content">
+            <div class="firstrow_content-textwithbtn">
+              <select class="select" name="CLASS" id="">
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Barbarian</option>
+              </select>
               <button class="add">add</button>
             </div>
             <div class="menutextl">ALIGNMENT</div>
           </div>
-          <div class="header_content_leftpart_rowblock_textfiled">
-            <div class="header_content_leftpart_rowblock_textfiled_textwithbtn">
-              <input type="text" class="textinput" />
+          <div class="firstrow_content">
+            <div class="firstrow_content-textwithbtn">
+              <input type="text" class="smallinput" />
               <button class="add">add</button>
             </div>
             <div class="menutextl">EXPERIENCE POINTS</div>
@@ -73,68 +93,52 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/main.scss";
 
-.header_content {
-  display: flex;
-  flex-flow: row;
+.header {
+  @include flexrow;
   justify-content: space-between;
   align-items: center;
   padding: 4px;
 
   &_rightpart {
-    display: flex;
-    flex-flow: column;
+    @include flexColumn;
     justify-content: center;
     align-items: flex-start;
     gap: 4px;
+    padding: 12px;
     border: 1px solid black;
-    padding: 8px;
-    border-radius: 12px 0 0 12px;
-    border-right: none;
-    width: 65%;
+    border-radius: 12px;
 
     &_textwithbtn {
-      display: flex;
-      flex-flow: row;
+      @include flexrow;
       gap: 4px;
     }
   }
 
   &_leftpart {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 700px;
+    @include flexColumn;
+    @include flexcenter;
     border: 1px solid black;
-    padding: 8px;
+    padding: 12px;
     border-radius: 12px;
+  }
+  .firstrow,
+  .secondrow {
+    display: flex;
+    flex-flow: row wrap;
+    @include flexcenter;
+    gap: 4px;
 
-    &_rowblock {
-      display: flex;
-      flex-flow: row wrap;
+    &_content {
+      @include flexColumn;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 4px;
 
-      &_textfiled {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: flex-start;
+      &_-textwithbtn {
+        @include flexrow;
         gap: 4px;
-        width: 30%;
-
-        &_textwithbtn {
-          display: flex;
-          flex-flow: row;
-          gap: 4px;
-        }
       }
     }
-  }
-  .textinput {
-    width: 90%;
-    border-radius: 12px;
   }
   .menutextl {
     border-top: 1px solid black;

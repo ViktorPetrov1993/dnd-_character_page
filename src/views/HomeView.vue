@@ -2,7 +2,9 @@
   <div class="CharacterPage lightversion">
     <HelloWorld />
     <StatsBlock>
-      <template v-slot:test><HelthBlock /> </template>
+      <template v-slot:HelthBlock><HelthBlock /> </template>
+      <template v-slot:PersonalityBlock><PersonalityBlock /> </template>
+      <template v-slot:OtherProfeshions><OtherProfeshions /> </template>
     </StatsBlock>
   </div>
 </template>
@@ -12,6 +14,8 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import StatsBlock from "@/components/StatsBlock.vue";
 import HelthBlock from "@/components/HelthBlock.vue";
+import PersonalityBlock from "@/components/PersonalityBlock.vue";
+import OtherProfeshions from "@/components/OtherProfeshions.vue";
 
 export default {
   name: "HomeView",
@@ -19,6 +23,8 @@ export default {
     HelloWorld,
     StatsBlock,
     HelthBlock,
+    PersonalityBlock,
+    OtherProfeshions,
   },
 };
 </script>

@@ -1,69 +1,50 @@
 <template>
-  <section class="helthblock">
-    <div class="helthblock_firstblock">
-      <div class="helthblock_firstblock_armor">
-        <div class="helthblock_firstblock_armor_leftblock">
-          <div class="helthblock_firstblock_armor_leftblock_value">16</div>
-          <div class="stats_main_textl">
+  <section class="mainblock">
+    <div class="firstblock">
+      <div class="firstblock_bigsqures">
+        <div class="firstblock_bigsqures-left">
+          <div class="textxxl squareblock">16</div>
+          <div class="textl">
             ARMOR <br />
             CLASS
           </div>
         </div>
-        <div class="helthblock_firstblock_armor_middleblock">
-          <input
-            type="text"
-            class="helthblock_firstblock_armor_middleblock_value"
-          />
-          <div class="stats_main_textl">INITIATIVE</div>
+        <div class="firstblock_bigsqures-middle">
+          <input type="text" class="squareinput textxxl" />
+          <div class="textl">INITIATIVE</div>
           <button class="add">add</button>
         </div>
-        <div class="helthblock_firstblock_armor_rightblock">
-          <input
-            type="text"
-            class="helthblock_firstblock_armor_rightblock_value"
-          />
-          <div class="stats_main_textl">SPEED</div>
+        <div class="firstblock_bigsqures-right">
+          <input type="text" class="squareinput textxxl" />
+          <div class="textl">SPEED</div>
           <button class="add">add</button>
         </div>
       </div>
-      <div class="helthblock_firstblock_helth">
-        <div class="helthblock_firstblock_helth_maxhelth">
+      <div class="firstblock_inputblocks">
+        <div class="firstblock_inputblocks-textwithbtn">
           <div class="textll">Hit Point Max</div>
-          <input
-            type="text"
-            class="helthblock_firstblock_helth_maxhelth_value"
-          />
+          <input type="text" class="verysmallinput" />
           <button class="add">add</button>
         </div>
-        <input type="text" class="helthblock_firstblock_helth_currenthelth" />
-        <div class="helthblock_firstblock_helth_named menutextm">
-          CURRENT HIT POINTS
-        </div>
+        <input type="text" class="biginput textxxl" />
+        <div class="firstblock_blockname menutextm">CURRENT HIT POINTS</div>
       </div>
-      <div class="helthblock_firstblock_temporhelth">
-        <input type="text" class="helthblock_firstblock_temporhelth_value" />
+      <div class="firstblock_reversinputblocks">
+        <input type="text" class="biginput textxxl" />
         <div class="menutextm">TEMPORARY HIT POINTS</div>
       </div>
-      <div class="helthblock_firstblock_bottomblocks">
-        <div class="helthblock_firstblock_bottomblocks_helthdice">
-          <div class="helthblock_firstblock_bottomblocks_helthdice_total">
+      <div class="firstblock_bottomblocks">
+        <div class="leftpart">
+          <div class="leftpart-withsmallinput">
             <div class="textll">Total</div>
-            <input
-              type="text"
-              class="helthblock_firstblock_bottomblocks_helthdice_total_value"
-            />
+            <input type="text" class="verysmallinput" />
           </div>
-          <input
-            type="text"
-            class="helthblock_firstblock_bottomblocks_helthdice_value"
-          />
+          <input type="text" class="mediuminput" />
           <div class="menutextl">HIT DICE</div>
         </div>
-        <div class="helthblock_firstblock_bottomblocks_deathdice">
-          <div class="helthblock_firstblock_bottomblocks_deathdice_check">
-            <label
-              for="succes"
-              class="helthblock_firstblock_bottomblocks_deathdice_check_succes"
+        <div class="firstblock_bottomblocks">
+          <div class="rightpart">
+            <label for="succes" class="rightpart-radio"
               ><div class="menutextl">SUCCESSES</div>
               <input
                 type="radio"
@@ -72,9 +53,7 @@
                 :key="'succes' + n"
               />{{ n }}
             </label>
-            <label
-              for="fail"
-              class="helthblock_firstblock_bottomblocks_deathdice_check_fail"
+            <label for="fail" class="rightpart-radio"
               ><div class="menutextl">FAILURES</div>
               <input
                 type="radio"
@@ -83,20 +62,16 @@
                 :key="'fail' + n"
               />{{ n }}
             </label>
+            <div class="menutextl">DEATH SAVES</div>
           </div>
-          <div class="menutextl">DEATH SAVES</div>
         </div>
       </div>
     </div>
-    <div class="helthblock_secondblock">
-      <div class="helthblock_secondblock_armor">
+    <div class="secondblock">
+      <div class="secondblock_toppart">
         <div>
-          <div class="helthblock_secondblock_armor_text menutextm">ARMOR</div>
-          <input
-            type="text"
-            v-model="text"
-            class="helthblock_secondblock_armor_value"
-          />
+          <div class="menutextm">ARMOR</div>
+          <input type="text" v-model="text" class="verysmallinput" />
           <button class="add" @click="addArmor">add</button>
         </div>
         <ul class="">
@@ -105,43 +80,19 @@
           </li>
         </ul>
       </div>
-      <div class="helthblock_secondblock_weapon">
-        <div class="helthblock_secondblock_weapon_items">
-          <div class="helthblock_secondblock_weapon_items_type">
-            <div
-              class="helthblock_secondblock_weapon_items_type_text menutextm"
-            >
-              NAME
-            </div>
-            <input
-              type="text"
-              v-model="weaponname"
-              class="helthblock_secondblock_weapon_items_type_firstvalue"
-            />
+      <div class="secondblock_bottompart">
+        <div class="secondblock_bottompart-rowinputs">
+          <div class="">
+            <div class="menutextm">NAME</div>
+            <input type="text" v-model="weaponname" class="verysmallinput" />
           </div>
-          <div class="helthblock_secondblock_weapon_items_type">
-            <div
-              class="helthblock_secondblock_weapon_items_type_text menutextm"
-            >
-              ATK BONUS
-            </div>
-            <input
-              type="text"
-              v-model="weaponname"
-              class="helthblock_secondblock_weapon_items_type_secondvalue"
-            />
+          <div class="">
+            <div class="menutextm">ATK BONUS</div>
+            <input type="text" v-model="weaponname" class="verysmallinput" />
           </div>
-          <div class="helthblock_secondblock_weapon_items_type">
-            <div
-              class="helthblock_secondblock_weapon_items_type_text menutextm"
-            >
-              DAMAGE/TYPE
-            </div>
-            <input
-              type="text"
-              v-model="weaponname"
-              class="helthblock_secondblock_weapon_items_type_thirdvalue"
-            />
+          <div class="">
+            <div class="menutextm">DAMAGE/TYPE</div>
+            <input type="text" v-model="weaponname" class="verysmallinput" />
           </div>
           <button class="add" @click="addWeapon">add</button>
         </div>
@@ -155,9 +106,7 @@
           </li>
         </ul>
       </div>
-      <div class="helthblock_secondblock_blockname menutextm">
-        ATTACKS & SPELLCASTING
-      </div>
+      <div class="secondblock_blockname menutextm">ATTACKS & SPELLCASTING</div>
     </div>
   </section>
 </template>
@@ -196,213 +145,130 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/main.scss";
 
-.helthblock {
+.mainblock {
   @include flexColumn;
   justify-content: flex-start;
   align-items: center;
+  gap: 12px;
+}
+.firstblock {
+  @include flexColumn;
+  @include flexstart;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 16px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 8px;
 
-  &_firstblock {
-    @include flexColumn;
-    @include flexstart;
-    justify-content: flex-start;
+  &_bigsqures {
+    @include flexrow;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 16px;
-    border: 1px solid black;
-    border-radius: 12px;
-    padding: 8px;
+    gap: 41px;
 
-    &_armor {
-      @include flexrow;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 46px;
-
-      &_leftblock,
-      &_middleblock,
-      &_rightblock {
-        @include flexColumn;
-        @include flexcenter;
-        gap: 4px;
-
-        &_value {
-          width: 60px;
-          height: 60px;
-          border: 2px solid black;
-          border-radius: 12px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
-      }
-    }
-
-    &_helth {
+    &_left,
+    &_middle,
+    &_right {
       @include flexColumn;
-      @include flexstart;
+      @include flexcenter;
       gap: 4px;
-      border: 2px solid black;
-      border-radius: 12px 12px 0 0;
-      padding: 6px;
-
-      &_maxhelth {
-        @include flexrow;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 4px;
-
-        &_value {
-          width: 160px;
-          border-radius: 12px;
-          text-align: center;
-        }
-      }
-
-      &_currenthelth {
-        width: 290px;
-        height: 50px;
-        text-align: center;
-      }
-
-      &_named {
-        margin-left: 70px;
-      }
-    }
-
-    &_temporhelth {
-      border: 2px solid black;
-      border-radius: 0 0 12px 12px;
-      padding: 6px;
-
-      &_value {
-        width: 290px;
-        height: 30px;
-        text-align: center;
-      }
-    }
-
-    &_bottomblocks {
-      @include flexrow;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 26px;
-
-      &_helthdice {
-        @include flexColumn;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 4px;
-        border: 2px solid black;
-        border-radius: 12px;
-        padding: 4px;
-
-        &_total {
-          @include flexrow;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 4px;
-
-          &_value {
-            width: 65px;
-            border-radius: 12px;
-            text-align: center;
-          }
-        }
-
-        &_value {
-          width: 100px;
-          height: 30px;
-          text-align: center;
-        }
-      }
-
-      &_deathdice {
-        @include flexColumn;
-        @include flexcenter;
-        gap: 8px;
-        border: 2px solid black;
-        border-radius: 12px;
-        padding: 16px 8px;
-
-        &_check {
-          &_succes,
-          &_fail {
-            @include flexrow;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 4px;
-          }
-        }
-      }
     }
   }
 
-  &_secondblock {
+  &_inputblocks {
     @include flexColumn;
     @include flexstart;
-    gap: 8px;
-    border: 1px solid black;
-    border-radius: 12px;
+    gap: 4px;
+    border: 2px solid black;
+    border-radius: 12px 12px 0 0;
     padding: 6px;
-    height: 331px;
-    position: relative;
 
-    &_armor {
-      &_text {
-        text-align: start;
-      }
-
-      &_value {
-        border-radius: 12px;
-        text-align: center;
-      }
-    }
-
-    &_weapon {
-      @include flexColumn;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 8px;
-
-      &_items {
-        @include flexrow;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 4px;
-
-        &_type {
-          @include flexColumn;
-          @include flexcenter;
-          gap: 8px;
-
-          &_text {
-            text-align: start;
-          }
-
-          &_firstvalue {
-            width: 70px;
-            border-radius: 12px;
-          }
-
-          &_secondvalue {
-            width: 40px;
-            border-radius: 12px;
-          }
-
-          &_thirdvalue {
-            width: 70px;
-            border-radius: 12px;
-          }
-        }
-      }
-    }
-
-    &_blockname {
-      margin-left: 70px;
-      position: absolute;
-      bottom: 6px;
+    &-textwithbtn {
+      @include flexrow;
+      @include flexcenter;
+      gap: 4px;
     }
   }
+
+  &_reversinputblocks {
+    border: 2px solid black;
+    border-radius: 0 0 12px 12px;
+    padding: 6px;
+  }
+
+  &_bottomblocks {
+    @include flexrow;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+.leftpart {
+  @include flexColumn;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 10px 4px;
+
+  &-withsmallinput {
+    @include flexrow;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+  }
+}
+.rightpart {
+  @include flexColumn;
+  @include flexcenter;
+  gap: 8px;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 16px 8px;
+
+  &-radio {
+    @include flexrow;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.secondblock {
+  @include flexColumn;
+  @include flexstart;
+  gap: 8px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 6px;
+  height: 305px;
+  position: relative;
+  overflow-y: hidden;
+
+  &_bottompart {
+    @include flexColumn;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    &-rowinputs {
+      @include flexrow;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  &_blockname {
+    margin-left: 70px;
+    position: absolute;
+    bottom: 6px;
+  }
+}
+.squareblock {
+  width: 60px;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
