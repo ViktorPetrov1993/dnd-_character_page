@@ -1,0 +1,85 @@
+.add{
+    border: none;
+    background: none;
+    color: blueviolet;
+}
+.button {
+    outline: none;
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    border-radius: $buttons-radius;
+    transition: all $transition ease;
+    cursor: pointer;
+  
+    &:disabled {
+      background: gray !important;
+      color: $dark-text !important;
+      cursor: not-allowed;
+    }
+  
+    &--primary {
+      background: $primary;
+      color: $light-text;
+      &:hover {
+        background: darken($primary, 10%);
+      }
+      &:active {
+        background: lighten($primary, 10%);
+      }
+    }
+  
+    &--secondary {
+      background: $secondary;
+      color: $light-text;
+      &:hover {
+        background: darken($secondary, 10%);
+      }
+      &:active {
+        background: lighten($secondary, 10%);
+      }
+    }
+  
+    &--danger {
+      background: $danger;
+      color: $light-text;
+      &:hover {
+        background: darken($danger, 10%);
+      }
+      &:active {
+        background: lighten($danger, 10%);
+      }
+    }
+  
+    &--warning {
+      background: $warning;
+      color: $light-text;
+      &:hover {
+        background: darken($warning, 10%);
+      }
+      &:active {
+        background: lighten($warning, 10%);
+      }
+    }
+  
+    &--success {
+      background: $success;
+      color: $light-text;
+      &:hover {
+        background: darken($success, 10%);
+      }
+      &:active {
+        background: lighten($success, 10%);
+      }
+    }
+  
+    &--info {
+      background: $info;
+      color: $light-text;
+      &:hover {
+        background: darken($info, 10%);
+      }
+      &:active {
+        background: lighten($info, 10%);
+      }
+    }
+  }

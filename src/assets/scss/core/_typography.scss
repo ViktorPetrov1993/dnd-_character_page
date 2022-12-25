@@ -1,0 +1,143 @@
+.menutextl{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    font-weight: 700;
+}
+.menutextm{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    font-weight: 700;
+}
+.textll{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    font-weight: 700;
+}
+.stats_main_input , .helthblock_firstblock_armor_leftblock_value , .helthblock_firstblock_armor_middleblock_value , .helthblock_firstblock_armor_rightblock_value{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    font-weight: 300;
+}
+.stats_main_textl , .stats_additional_firstblock_textl , .stats_additional_secondblock_textl{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    font-weight: 700;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 16px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    outline: none;
+    color: $link-color;
+    text-shadow: 0 0 1px darken($link-color, 15%);
+    transition: all 0.4s ease;
+  
+    &:hover, &:focus {
+      color: darken($link-color, 15%);
+    }
+    &:active {
+      color: lighten($link-color, 15%);
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    text-align: justify;
+  }
+  
+  .h1 {
+    font-size: 42px;
+    font-weight: normal;
+  }
+  
+  .h2 {
+    font-size: 36px;
+    font-weight: normal;
+  }
+  
+  .h3 {
+    font-size: 32px;
+    font-weight: normal;
+  }
+  
+  .h4 {
+    font-size: 27px;
+    font-weight: normal;
+  }
+  
+  .h5 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+  
+  .h6 {
+    font-size: 21px;
+    font-weight: normal;
+  }
+  
+  .fw-100 {
+    font-weight: 100;
+  }
+  
+  .fw-200 {
+    font-weight: 200;
+  }
+  
+  .fw-300 {
+    font-weight: 300;
+  }
+  
+  .fw-400 {
+    font-weight: 400;
+  }
+  
+  .fw-500 {
+    font-weight: 500;
+  }
+  
+  .fw-600 {
+    font-weight: 600;
+  }
+  
+  .fw-700 {
+    font-weight: 700;
+  }
+  
+  .fw-800 {
+    font-weight: 800;
+  }
+  
+  .fw-900 {
+    font-weight: 900;
+  }
+  
+  .label {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .input, .textarea {
+    font-size: 16px;
+  }
+  
+  .button {
+    font-size: 21px;
+    line-height: 21px;
+  }

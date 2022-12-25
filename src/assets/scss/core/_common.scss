@@ -1,0 +1,16 @@
+body {
+    font-family: 'Calibri', sans-serif;
+    color: $dark-text;
+  }
+  
+  .button-group,
+  .input-group,
+  .textarea-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+  
+    gap: 32px;
+    margin: 0 0 64px 0;
+  }
