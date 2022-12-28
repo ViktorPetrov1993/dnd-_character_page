@@ -78,6 +78,7 @@
   .verysmallinput{
     width: 68px;
     border-radius: 12px;
+    text-align: center;
     outline: none;
     border: 2px solid transparent;
     transition: all $transition ease;
@@ -399,7 +400,12 @@
     height: 20px;
   }
   .smallsquare{
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 30px;
     text-align: center;
+    border-radius: 12px;
+  }
+  .mediumtextarea{
+    width: 294px;
+    border: 1px solid black;
   }

@@ -12,19 +12,18 @@
         <div class="firstblock_bigsqures-middle">
           <input type="text" class="squareinput textxxl" />
           <div class="textl">INITIATIVE</div>
-          <button class="add">add</button>
+          <button class="button button--info">add</button>
         </div>
         <div class="firstblock_bigsqures-right">
           <input type="text" class="squareinput textxxl" />
           <div class="textl">SPEED</div>
-          <button class="add">add</button>
+          <button class="button button--info">add</button>
         </div>
       </div>
       <div class="firstblock_inputblocks">
         <div class="firstblock_inputblocks-textwithbtn">
           <div class="textll">Hit Point Max</div>
-          <input type="text" class="verysmallinput" />
-          <button class="add">add</button>
+          <input type="number" class="smallsquare" />
         </div>
         <input type="text" class="biginput textxxl" />
         <div class="firstblock_blockname menutextm">CURRENT HIT POINTS</div>
@@ -46,20 +45,18 @@
           <div class="rightpart">
             <label for="succes" class="rightpart-radio"
               ><div class="menutextl">SUCCESSES</div>
-              <input
-                type="radio"
-                id="succes"
-                v-for="n of 3"
-                :key="'succes' + n"
-              />{{ n }}
+              <input type="checkbox" v-for="n of 3" :key="'succes' + n" />{{
+                n
+              }}
             </label>
-            <label for="fail" class="rightpart-radio"
+            <label class="rightpart-radio"
               ><div class="menutextl">FAILURES</div>
               <input
-                type="radio"
-                id="fail"
+                type="checkbox"
+                v-model="deathSaves"
                 v-for="n of 3"
                 :key="'fail' + n"
+                :value="n"
               />{{ n }}
             </label>
             <div class="menutextl">DEATH SAVES</div>
@@ -71,30 +68,30 @@
       <div class="secondblock_toppart">
         <div>
           <div class="menutextm">ARMOR</div>
-          <input type="text" v-model="text" class="verysmallinput" />
-          <button class="add" @click="addArmor">add</button>
+          <select name="" id="" class="select">
+            <option value="Barbarian">Barbarian</option>
+            <option value="Barbarian">Barbarian</option>
+            <option value="Barbarian">Barbarian</option>
+            <option value="Barbarian">Barbarian</option>
+          </select>
         </div>
-        <ul class="">
-          <li v-for="n of armor" :key="'item' + n" @click="remove(n)">
-            {{ n }}
-          </li>
-        </ul>
       </div>
       <div class="secondblock_bottompart">
         <div class="secondblock_bottompart-rowinputs">
+          <div class="menutextm">NAME</div>
+          <div class="menutextm">ATK BONUS</div>
+          <div class="menutextm">DAMAGE/TYPE</div>
+        </div>
+        <div class="secondblock_bottompart-rowinputs">
           <div class="">
-            <div class="menutextm">NAME</div>
-            <input type="text" v-model="weaponname" class="verysmallinput" />
+            <input
+              type="text"
+              v-model="weaponname"
+              class="mediumlargeinput"
+              multiple="3"
+            />
           </div>
-          <div class="">
-            <div class="menutextm">ATK BONUS</div>
-            <input type="text" v-model="weaponname" class="verysmallinput" />
-          </div>
-          <div class="">
-            <div class="menutextm">DAMAGE/TYPE</div>
-            <input type="text" v-model="weaponname" class="verysmallinput" />
-          </div>
-          <button class="add" @click="addWeapon">add</button>
+          <button class="button button--info" @click="addWeapon">add</button>
         </div>
         <ul class="">
           <li
@@ -119,23 +116,24 @@ export default {
   },
   data() {
     return {
-      text: null,
-      armor: [],
       weapon: [],
+      weaponname: null,
+      deathSaves: [],
     };
   },
   methods: {
-    addArmor() {
-      this.armor.push(this.text);
-    },
-    remove(num) {
-      this.armor.splice(num, 1);
-    },
     addWeapon() {
       this.weapon.push(this.weaponname);
     },
     removeWeapon(num) {
       this.weapon.splice(num, 1);
+    },
+  },
+  watch: {
+    deathSaves() {
+      if (this.deathSaves.length > 2) {
+        alert("U ARE DEAD");
+      }
     },
   },
 };
@@ -144,7 +142,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/scss/main.scss";
-
 .mainblock {
   @include flexColumn;
   justify-content: flex-start;
@@ -226,7 +223,7 @@ export default {
   gap: 8px;
   border: 2px solid black;
   border-radius: 12px;
-  padding: 16px 8px;
+  padding: 13px 8px;
 
   &-radio {
     @include flexrow;
@@ -237,11 +234,12 @@ export default {
 .secondblock {
   @include flexColumn;
   @include flexstart;
-  gap: 8px;
+  gap: 4px;
   border: 1px solid black;
   border-radius: 12px;
   padding: 6px;
-  height: 305px;
+  height: 292px;
+  width: 318px;
   position: relative;
   overflow-y: hidden;
 

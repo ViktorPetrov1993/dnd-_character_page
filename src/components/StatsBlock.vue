@@ -4,50 +4,46 @@
       <div>
         <div class="stats_main">
           <div class="textl fw-700">STRENGTH</div>
-          <input type="text" class="squareinput textxxl" />
+          <input type="number" v-model="strength" class="squareinput textxxl" />
         </div>
-        <div class="stats_main_value">+3</div>
-        <button class="add">add</button>
+        <div class="stats_main_value" v-if="isCharacterName">
+          {{ strBonus.bonus }}
+        </div>
       </div>
       <div>
         <div class="stats_main">
           <div class="textl fw-700">DEXTERITY</div>
-          <input type="text" class="squareinput textxxl" />
+          <input type="number" class="squareinput textxxl" />
         </div>
         <div class="stats_main_value">+3</div>
-        <button class="add">add</button>
       </div>
       <div>
         <div class="stats_main">
           <div class="textl fw-700">CONSTITUTION</div>
-          <input type="text" class="squareinput textxxl" />
+          <input type="number" class="squareinput textxxl" />
         </div>
         <div class="stats_main_value">+3</div>
-        <button class="add">add</button>
       </div>
       <div>
         <div class="stats_main">
           <div class="textl fw-700">INTELLIGENCE</div>
-          <input type="text" class="squareinput textxxl" />
+          <input type="number" class="squareinput textxxl" />
         </div>
         <div class="stats_main_value">+3</div>
-        <button class="add">add</button>
       </div>
       <div>
         <div class="stats_main">
           <div class="textl fw-700">WISDOM</div>
-          <input type="text" class="squareinput textxxl" />
+          <input type="number" class="squareinput textxxl" />
         </div>
         <div class="stats_main_value">+3</div>
-        <button class="add">add</button>
       </div>
       <div>
         <div class="stats_main">
           <div class="textl fw-700">CHARISMA</div>
-          <input type="text" class="squareinput textxxl" />
+          <input type="number" class="squareinput textxxl" />
         </div>
         <div class="stats_main_value">+3</div>
-        <button class="add">add</button>
       </div>
     </div>
     <div class="stats_additional">
@@ -56,7 +52,7 @@
         <div class="textl fw-700">INSPIRATION</div>
       </div>
       <div class="secondblock">
-        <input type="text" class="smallsquare" />
+        <input type="text" class="smallsquare" placeholder="+2" />
         <div class="textl fw-700">MASTER BONUS</div>
       </div>
 
@@ -200,13 +196,26 @@ export default {
   props: {
     msg: String,
   },
+  data() {
+    return {
+      strength: null,
+      strBonus: [
+        { str: 1, bonus: -5 },
+        { str: 3, bonus: -4 },
+      ],
+    };
+  },
+  computed: {
+    isCharacterName() {
+      return this.strength == this.strBonus.[str];
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/scss/main.scss";
-
 .stats {
   display: flex;
   flex-flow: row wrap;
@@ -217,6 +226,7 @@ export default {
   &_main {
     @include flexColumn;
     @include flexcenter;
+    padding-top: 8px;
 
     &_value {
       border: 1px solid black;

@@ -1,13 +1,7 @@
 <template>
   <section class="">
     <div class="header">
-      <div class="header_rightpart">
-        <div class="header_rightpart-textwithbtn">
-          <input type="text" class="input" />
-          <button class="add">add</button>
-        </div>
-        <div class="menutextl">CHARACTER NAME</div>
-      </div>
+      <slot name="CharacterName"> </slot>
       <div class="header_leftpart">
         <div class="firstrow">
           <div class="firstrow_content">
@@ -18,26 +12,34 @@
                 <option value="Barbarian">Barbarian</option>
                 <option value="Barbarian">Barbarian</option>
               </select>
-              <button class="add">add</button>
+              <button class="button button--info">add</button>
             </div>
             <div class="menutextl">CLASS</div>
           </div>
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn">
-              <select class="select" name="CLASS" id="">
+              <select class="select" name="CLASS">
                 <option value="Barbarian">Barbarian</option>
                 <option value="Barbarian">Barbarian</option>
                 <option value="Barbarian">Barbarian</option>
                 <option value="Barbarian">Barbarian</option>
               </select>
-              <button class="add">add</button>
+              <button class="button button--info">add</button>
             </div>
             <div class="menutextl">BACKGROUND</div>
           </div>
           <div class="firstrow_content">
-            <div class="firstrow_content-textwithbtn">
-              <input type="text" class="smallinput" />
-              <button class="add">add</button>
+            <div class="firstrow_content-textwithbtn" v-if="isPlayerName">
+              <input type="text" v-model="playername" class="smallinput" />
+              <button class="button button--info" @click="addPlayername">
+                add
+              </button>
+            </div>
+            <div class="header_rightpart-textwithbtn" v-if="playerField">
+              <div class="textl">{{ playerField }}</div>
+              <button class="button button--info" @click="editPlayername">
+                edit
+              </button>
             </div>
             <div class="menutextl">PLAYER NAME</div>
           </div>
@@ -51,7 +53,7 @@
                 <option value="Barbarian">Barbarian</option>
                 <option value="Barbarian">Barbarian</option>
               </select>
-              <button class="add">add</button>
+              <button class="button button--info">add</button>
             </div>
             <div class="menutextl">RACE</div>
           </div>
@@ -63,14 +65,22 @@
                 <option value="Barbarian">Barbarian</option>
                 <option value="Barbarian">Barbarian</option>
               </select>
-              <button class="add">add</button>
+              <button class="button button--info">add</button>
             </div>
             <div class="menutextl">ALIGNMENT</div>
           </div>
           <div class="firstrow_content">
-            <div class="firstrow_content-textwithbtn">
-              <input type="text" class="smallinput" />
-              <button class="add">add</button>
+            <div class="firstrow_content-textwithbtn" v-if="isExpPoints">
+              <input type="text" v-model="exppoints" class="smallinput" />
+              <button class="button button--info" @click="addExpPoints">
+                add
+              </button>
+            </div>
+            <div class="header_rightpart-textwithbtn" v-if="expField">
+              <div class="textl">{{ expField }}</div>
+              <button class="button button--info" @click="editExpPoints">
+                edit
+              </button>
             </div>
             <div class="menutextl">EXPERIENCE POINTS</div>
           </div>
@@ -82,9 +92,41 @@
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
+  name: "name-block",
+  props: {},
+  data() {
+    return {
+      playername: null,
+      playerField: null,
+      editPlayer: false,
+      exppoints: null,
+      expField: null,
+      editExp: false,
+    };
+  },
+  computed: {
+    isPlayerName() {
+      return this.editPlayer || !this.playerField;
+    },
+    isExpPoints() {
+      return this.editExp || !this.expField;
+    },
+  },
+  methods: {
+    addPlayername() {
+      this.playerField = this.playername;
+      this.editPlayer = false;
+    },
+    editPlayername() {
+      this.editPlayer = !this.editPlayer;
+    },
+    addExpPoints() {
+      this.expField = this.exppoints;
+      this.editExp = false;
+    },
+    editExpPoints() {
+      this.editExp = !this.editExp;
+    },
   },
 };
 </script>
@@ -92,7 +134,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/scss/main.scss";
-
 .header {
   @include flexrow;
   justify-content: space-between;
@@ -108,8 +149,9 @@ export default {
     border: 1px solid black;
     border-radius: 12px;
 
-    &_textwithbtn {
+    &-textwithbtn {
       @include flexrow;
+      @include flexcenter;
       gap: 4px;
     }
   }
@@ -134,7 +176,7 @@ export default {
       align-items: flex-start;
       gap: 4px;
 
-      &_-textwithbtn {
+      &-textwithbtn {
         @include flexrow;
         gap: 4px;
       }

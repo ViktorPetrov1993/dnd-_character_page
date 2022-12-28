@@ -1,13 +1,13 @@
 <template>
   <section class="mainblock">
     <div class="firstblock">
-      <input type="text" class="smallsquare" />
+      <input type="number" class="smallsquare" />
       <div class="textl fw-700">PASSIVE WISDOM (PERCEPTION)</div>
     </div>
     <div class="secondblock">
       <div>
         <input type="text" v-model="text" class="mediumlargeinput" />
-        <button class="add" @click="addTraits">add</button>
+        <button class="button button--info" @click="addTraits">add</button>
       </div>
       <div
         v-for="n of traits"
@@ -22,47 +22,44 @@
       </div>
     </div>
     <div class="thirdblock">
-      <div class="thirdblock_leftpart">
-        <button class="add" @click="addWeapon">add</button>
-        <div class="smallbox">
-          <div>cp</div>
-          <div><input type="text" class="verysmallinput" /></div>
-        </div>
-        <button class="add">add</button>
-        <div class="smallbox">
-          <div>sp</div>
-          <div><input type="text" class="verysmallinput" /></div>
-        </div>
-        <button class="add">add</button>
-        <div class="smallbox">
-          <div>ep</div>
-          <div><input type="text" class="verysmallinput" /></div>
-        </div>
-        <button class="add">add</button>
-        <div class="smallbox">
-          <div>cp</div>
-          <div><input type="text" class="verysmallinput" /></div>
-        </div>
-        <button class="add">add</button>
-        <div class="smallbox">
-          <div>pp</div>
-          <div><input type="text" class="verysmallinput" /></div>
-        </div>
-        <button class="add">add</button>
+      <div>
+        <input type="text" v-model="textweapon" class="mediumlargeinput" />
+        <button class="button button--info" @click="addWeapon">add</button>
       </div>
-      <div class="thirdblock_content">
+      <div class="thirdblock_rowmenu">
         <div>
-          <input type="text" v-model="textweapon" class="mediumlargeinput" />
+          <div class="smallbox">
+            <div>cp</div>
+            <div><input type="number" class="smallsquare" /></div>
+          </div>
+          <div class="smallbox">
+            <div>sp</div>
+            <div><input type="number" class="smallsquare" /></div>
+          </div>
+          <div class="smallbox">
+            <div>ep</div>
+            <div><input type="number" class="smallsquare" /></div>
+          </div>
+          <div class="smallbox">
+            <div>cp</div>
+            <div><input type="number" class="smallsquare" /></div>
+          </div>
+          <div class="smallbox">
+            <div>pp</div>
+            <div><input type="number" class="smallsquare" /></div>
+          </div>
         </div>
-        <div
-          v-for="n of weapon"
-          :key="'weapon' + n"
-          @click="removeWeapon(n)"
-          class="menutextm"
-        >
-          {{ n }}
+        <div class="">
+          <div
+            v-for="n of weapon"
+            :key="'weapon' + n"
+            @click="removeWeapon(n)"
+            class="menutextm"
+          >
+            {{ n }}
+          </div>
+          <div class="thirdblock_rowmenu_blockname menutextm">EQUIPMENT</div>
         </div>
-        <div class="thirdblock_blockname menutextm">EQUIPMENT</div>
       </div>
     </div>
   </section>
@@ -102,7 +99,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/scss/main.scss";
-
 .mainblock {
   @include flexColumn;
   @include flexstart;
@@ -138,7 +134,7 @@ export default {
 .thirdblock {
   height: 350px;
   width: 350px;
-  @include flexrow;
+  @include flexColumn;
   @include flexstart;
   gap: 4px;
   border: 1px solid black;
@@ -147,20 +143,18 @@ export default {
   position: relative;
   overflow-y: hidden;
 
-  &_leftpart {
-    @include flexColumn;
+  &_rowmenu {
+    @include flexrow;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
+    gap: 6px;
     padding-top: 16px;
-  }
-  &_blockname {
-    margin-left: 15px;
-    position: absolute;
-    bottom: 6px;
-  }
-  &_content {
-    text-align: start;
+
+    &_blockname {
+      margin-left: 15px;
+      position: absolute;
+      bottom: 6px;
+    }
   }
 }
 .smallbox {
