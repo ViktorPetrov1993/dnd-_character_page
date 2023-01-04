@@ -25,7 +25,10 @@
     outline: 1px solid $dark-text;
     padding-bottom: 1px;
   }
-
+  input,
+  select {
+    background: #49676a;
+  }
   .input, .textarea {
     outline: none;
     border: 2px solid transparent;

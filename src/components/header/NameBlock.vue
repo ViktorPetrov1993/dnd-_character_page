@@ -14,7 +14,7 @@
               </select>
               <button class="button button--info">add</button>
             </div>
-            <div class="menutextl">CLASS</div>
+            <div class="textlx">CLASS</div>
           </div>
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn">
@@ -26,7 +26,7 @@
               </select>
               <button class="button button--info">add</button>
             </div>
-            <div class="menutextl">BACKGROUND</div>
+            <div class="textlx">BACKGROUND</div>
           </div>
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn" v-if="isPlayerName">
@@ -41,7 +41,7 @@
                 edit
               </button>
             </div>
-            <div class="menutextl">PLAYER NAME</div>
+            <div class="textlx">PLAYER NAME</div>
           </div>
         </div>
         <div class="secondrow">
@@ -55,7 +55,7 @@
               </select>
               <button class="button button--info">add</button>
             </div>
-            <div class="menutextl">RACE</div>
+            <div class="textlx">RACE</div>
           </div>
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn">
@@ -67,7 +67,7 @@
               </select>
               <button class="button button--info">add</button>
             </div>
-            <div class="menutextl">ALIGNMENT</div>
+            <div class="textlx">ALIGNMENT</div>
           </div>
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn" v-if="isExpPoints">
@@ -82,7 +82,7 @@
                 edit
               </button>
             </div>
-            <div class="menutextl">EXPERIENCE POINTS</div>
+            <div class="textlx">EXPERIENCE POINTS</div>
           </div>
         </div>
       </div>
@@ -133,9 +133,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../assets/scss/main.scss";
+@import "../../assets/scss/main.scss";
 .header {
-  @include flexrow;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   padding: 4px;
@@ -146,7 +147,7 @@ export default {
     align-items: flex-start;
     gap: 4px;
     padding: 12px;
-    border: 1px solid black;
+    border: 1px solid $border-color;
     border-radius: 12px;
 
     &-textwithbtn {
@@ -159,7 +160,7 @@ export default {
   &_leftpart {
     @include flexColumn;
     @include flexcenter;
-    border: 1px solid black;
+    border: 1px solid $border-color;
     padding: 12px;
     border-radius: 12px;
   }
@@ -182,12 +183,11 @@ export default {
       }
     }
   }
-  .menutextl {
-    border-top: 1px solid black;
+  .textlx {
+    border-top: 1px solid $border-color;
     width: 98%;
     text-align: start;
     padding: 4px;
-    color: crimson;
   }
 }
 </style>

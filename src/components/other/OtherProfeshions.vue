@@ -13,11 +13,11 @@
         v-for="n of traits"
         :key="'traits' + n"
         @click="removeTraits(n)"
-        class="menutextm"
+        class="textm"
       >
         {{ n }}
       </div>
-      <div class="secondblock_blockname menutextm">
+      <div class="secondblock_blockname textm">
         OTHER PROFICIENCIES & LANGUAGES
       </div>
     </div>
@@ -29,23 +29,23 @@
       <div class="thirdblock_rowmenu">
         <div>
           <div class="smallbox">
-            <div>cp</div>
+            <div class="textm">cp</div>
             <div><input type="number" class="smallsquare" /></div>
           </div>
           <div class="smallbox">
-            <div>sp</div>
+            <div class="textm">sp</div>
             <div><input type="number" class="smallsquare" /></div>
           </div>
           <div class="smallbox">
-            <div>ep</div>
+            <div class="textm">ep</div>
             <div><input type="number" class="smallsquare" /></div>
           </div>
           <div class="smallbox">
-            <div>cp</div>
+            <div class="textm">cp</div>
             <div><input type="number" class="smallsquare" /></div>
           </div>
           <div class="smallbox">
-            <div>pp</div>
+            <div class="textm">pp</div>
             <div><input type="number" class="smallsquare" /></div>
           </div>
         </div>
@@ -54,11 +54,11 @@
             v-for="n of weapon"
             :key="'weapon' + n"
             @click="removeWeapon(n)"
-            class="menutextm"
+            class="textm"
           >
             {{ n }}
           </div>
-          <div class="thirdblock_rowmenu_blockname menutextm">EQUIPMENT</div>
+          <div class="thirdblock_rowmenu_blockname textm">EQUIPMENT</div>
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../assets/scss/main.scss";
+@import "../../assets/scss/main.scss";
 .mainblock {
   @include flexColumn;
   @include flexstart;
@@ -109,7 +109,7 @@ export default {
   @include flexrow;
   @include flexcenter;
   gap: 4px;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   border-radius: 12px;
   padding: 10px 8px;
 }
@@ -119,7 +119,7 @@ export default {
   @include flexColumn;
   @include flexstart;
   gap: 4px;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   border-radius: 12px;
   padding: 10px 8px;
   position: relative;
@@ -137,7 +137,7 @@ export default {
   @include flexColumn;
   @include flexstart;
   gap: 4px;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   border-radius: 12px;
   padding: 10px 8px;
   position: relative;

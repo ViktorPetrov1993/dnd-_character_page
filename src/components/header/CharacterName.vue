@@ -14,7 +14,7 @@
             edit
           </button>
         </div>
-        <div class="menutextl">CHARACTER NAME</div>
+        <div class="textlx">CHARACTER NAME</div>
       </div>
     </div>
   </section>
@@ -49,9 +49,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/main.scss";
+@import "../../assets/scss/main.scss";
 .header {
-  @include flexrow;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   padding: 4px;
@@ -62,7 +63,7 @@ export default {
     align-items: flex-start;
     gap: 4px;
     padding: 12px;
-    border: 1px solid black;
+    border: 1px solid $border-color;
     border-radius: 12px;
 
     &-textwithbtn {

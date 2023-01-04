@@ -1,18 +1,18 @@
 <template>
   <section class="mainblock">
-    <textarea name="" cols="30" rows="10" class="menutextm border_firstblock">
+    <textarea name="" cols="30" rows="10" class="textm border_firstblock">
       PERSONALITY TRAITS
     </textarea>
-    <textarea name="" cols="30" rows="10" class="menutextm border_secondblock">
+    <textarea name="" cols="30" rows="10" class="textm border_secondblock">
       IDEALS
     </textarea>
-    <textarea name="" cols="30" rows="10" class="menutextm border_thirdblock">
+    <textarea name="" cols="30" rows="10" class="textm border_thirdblock">
       BONDS
     </textarea>
-    <textarea name="" cols="30" rows="10" class="menutextm border_fourthblock">
+    <textarea name="" cols="30" rows="10" class="textm border_fourthblock">
       FLAWS
     </textarea>
-    <textarea name="" cols="30" rows="10" class="menutextm border_fivethblock">
+    <textarea name="" cols="30" rows="10" class="textm border_fivethblock">
       FEATURES & TRAITS
     </textarea>
   </section>
@@ -33,7 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../assets/scss/main.scss";
+@import "../../assets/scss/main.scss";
 .mainblock {
   @include flexColumn;
   @include flexstart;
@@ -57,7 +57,10 @@ export default {
 }
 .border_fivethblock,
 .mediumtextarea {
-  height: 310px;
+  height: 330px;
   border-radius: 12px;
+}
+textarea {
+  color: aqua;
 }
 </style>

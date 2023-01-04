@@ -12,25 +12,23 @@
         <div class="firstblock_bigsqures-middle">
           <input type="text" class="squareinput textxxl" />
           <div class="textl">INITIATIVE</div>
-          <button class="button button--info">add</button>
         </div>
         <div class="firstblock_bigsqures-right">
-          <input type="text" class="squareinput textxxl" />
+          <div class="textxxl squareblock">35</div>
           <div class="textl">SPEED</div>
-          <button class="button button--info">add</button>
         </div>
       </div>
       <div class="firstblock_inputblocks">
         <div class="firstblock_inputblocks-textwithbtn">
-          <div class="textll">Hit Point Max</div>
+          <div class="textm">Hit Point Max</div>
           <input type="number" class="smallsquare" />
         </div>
         <input type="text" class="biginput textxxl" />
-        <div class="firstblock_blockname menutextm">CURRENT HIT POINTS</div>
+        <div class="firstblock_blockname textm">CURRENT HIT POINTS</div>
       </div>
       <div class="firstblock_reversinputblocks">
         <input type="text" class="biginput textxxl" />
-        <div class="menutextm">TEMPORARY HIT POINTS</div>
+        <div class="textm">TEMPORARY HIT POINTS</div>
       </div>
       <div class="firstblock_bottomblocks">
         <div class="leftpart">
@@ -39,18 +37,18 @@
             <input type="text" class="verysmallinput" />
           </div>
           <input type="text" class="mediuminput" />
-          <div class="menutextl">HIT DICE</div>
+          <div class="textlx">HIT DICE</div>
         </div>
         <div class="firstblock_bottomblocks">
           <div class="rightpart">
             <label for="succes" class="rightpart-radio"
-              ><div class="menutextl">SUCCESSES</div>
+              ><div class="textlx">SUCCESSES</div>
               <input type="checkbox" v-for="n of 3" :key="'succes' + n" />{{
                 n
               }}
             </label>
             <label class="rightpart-radio"
-              ><div class="menutextl">FAILURES</div>
+              ><div class="textlx">FAILURES</div>
               <input
                 type="checkbox"
                 v-model="deathSaves"
@@ -59,7 +57,7 @@
                 :value="n"
               />{{ n }}
             </label>
-            <div class="menutextl">DEATH SAVES</div>
+            <div class="textlx">DEATH SAVES</div>
           </div>
         </div>
       </div>
@@ -67,7 +65,7 @@
     <div class="secondblock">
       <div class="secondblock_toppart">
         <div>
-          <div class="menutextm">ARMOR</div>
+          <div class="textm">ARMOR</div>
           <select name="" id="" class="select">
             <option value="Barbarian">Barbarian</option>
             <option value="Barbarian">Barbarian</option>
@@ -78,9 +76,9 @@
       </div>
       <div class="secondblock_bottompart">
         <div class="secondblock_bottompart-rowinputs">
-          <div class="menutextm">NAME</div>
-          <div class="menutextm">ATK BONUS</div>
-          <div class="menutextm">DAMAGE/TYPE</div>
+          <div class="textm">NAME</div>
+          <div class="textm">ATK BONUS</div>
+          <div class="textm">DAMAGE/TYPE</div>
         </div>
         <div class="secondblock_bottompart-rowinputs">
           <div class="">
@@ -103,7 +101,7 @@
           </li>
         </ul>
       </div>
-      <div class="secondblock_blockname menutextm">ATTACKS & SPELLCASTING</div>
+      <div class="secondblock_blockname textm">ATTACKS & SPELLCASTING</div>
     </div>
   </section>
 </template>
@@ -141,7 +139,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../assets/scss/main.scss";
+@import "../../assets/scss/main.scss";
 .mainblock {
   @include flexColumn;
   justify-content: flex-start;
@@ -154,7 +152,7 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 16px;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   border-radius: 12px;
   padding: 8px;
 
@@ -177,7 +175,7 @@ export default {
     @include flexColumn;
     @include flexstart;
     gap: 4px;
-    border: 2px solid black;
+    border: 2px solid $border-color;
     border-radius: 12px 12px 0 0;
     padding: 6px;
 
@@ -189,7 +187,7 @@ export default {
   }
 
   &_reversinputblocks {
-    border: 2px solid black;
+    border: 2px solid $border-color;
     border-radius: 0 0 12px 12px;
     padding: 6px;
   }
@@ -206,7 +204,7 @@ export default {
   justify-content: center;
   align-items: flex-start;
   gap: 4px;
-  border: 2px solid black;
+  border: 2px solid $border-color;
   border-radius: 12px;
   padding: 10px 4px;
 
@@ -221,7 +219,7 @@ export default {
   @include flexColumn;
   @include flexcenter;
   gap: 8px;
-  border: 2px solid black;
+  border: 2px solid $border-color;
   border-radius: 12px;
   padding: 13px 8px;
 
@@ -235,10 +233,10 @@ export default {
   @include flexColumn;
   @include flexstart;
   gap: 4px;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   border-radius: 12px;
   padding: 6px;
-  height: 292px;
+  height: 312px;
   width: 318px;
   position: relative;
   overflow-y: hidden;

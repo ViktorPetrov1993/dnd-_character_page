@@ -1,23 +1,16 @@
 <template>
-  <div :class="['CharacterPage', 'lightversion', { darkversion: isActive }]">
+  <div>
     <NameBlock>
       <template v-slot:CharacterName><CharacterName /> </template>
     </NameBlock>
     <StatsBlock>
+      <template v-slot:MainStats><MainStats /> </template>
       <template v-slot:HelthBlock><HelthBlock /> </template>
       <template v-slot:PersonalityBlock><PersonalityBlock /> </template>
       <template v-slot:OtherProfeshions><OtherProfeshions /> </template>
     </StatsBlock>
-    <button
-      :class="[
-        'button',
-        { 'button--primary': isActive },
-        { 'button--secondary': !isActive },
-      ]"
-      @click="isActive = !isActive"
-    >
-      dark
-    </button>
+    <AdditionalNotes />
+
     <!-- <SpeshButton @testEvent="test_met"
     {{ test }}></SpeshButton> -->
   </div>
@@ -25,12 +18,14 @@
 
 <script>
 // @ is an alias to /src
-import NameBlock from "@/components/NameBlock.vue";
-import StatsBlock from "@/components/StatsBlock.vue";
-import HelthBlock from "@/components/HelthBlock.vue";
-import PersonalityBlock from "@/components/PersonalityBlock.vue";
-import OtherProfeshions from "@/components/OtherProfeshions.vue";
-import CharacterName from "@/components/CharacterName.vue";
+import NameBlock from "@/components/header/NameBlock.vue";
+import StatsBlock from "@/components/stats/StatsBlock.vue";
+import HelthBlock from "@/components/helth/HelthBlock.vue";
+import PersonalityBlock from "@/components/helth/PersonalityBlock.vue";
+import OtherProfeshions from "@/components/other/OtherProfeshions.vue";
+import CharacterName from "@/components/header/CharacterName.vue";
+import AdditionalNotes from "@/components/other/AdditionalNotes.vue";
+import MainStats from "@/components/stats/MainStats.vue";
 
 // import SpeshButton from "@/components/SpeshButton.vue";
 
@@ -44,6 +39,8 @@ export default {
     PersonalityBlock,
     OtherProfeshions,
     CharacterName,
+    AdditionalNotes,
+    MainStats,
     // SpeshButton,
   },
   data() {
@@ -60,17 +57,26 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 img {
   max-width: 100% !important;
 }
 body {
   margin: 0;
+  background: url(../assets/img/mainBG.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
-.lightversion {
-  background: linear-gradient(to top, #eef3d2, #fc8884);
-}
-.darkversion {
-  background: linear-gradient(to top, #af6480, #c3cee5);
+.textm,
+.textl,
+.textll,
+.textlx,
+.textxxl {
+  color: #6ce8e8;
+  background: #0b1813;
+  border-radius: 12px;
+  padding: 0 4px;
 }
 </style>
