@@ -8,9 +8,17 @@
             <div class="firstrow_content-textwithbtn">
               <select class="select" name="CLASS" id="">
                 <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Bard</option>
+                <option value="Barbarian">Clirick</option>
+                <option value="Barbarian">Druid</option>
+                <option value="Barbarian">Warrior</option>
+                <option value="Barbarian">Monk</option>
+                <option value="Barbarian">Palladin</option>
+                <option value="Barbarian">Ranger</option>
+                <option value="Barbarian">Rogue</option>
+                <option value="Barbarian">Sorcerer</option>
+                <option value="Barbarian">Warlock</option>
+                <option value="Barbarian">Wizzard</option>
               </select>
               <button class="button button--info">add</button>
             </div>
@@ -19,10 +27,19 @@
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn">
               <select class="select" name="CLASS">
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Прислужник</option>
+                <option value="Barbarian">Шарлатан</option>
+                <option value="Barbarian">Преступник</option>
+                <option value="Barbarian">Артист</option>
+                <option value="Barbarian">Народный герой</option>
+                <option value="Barbarian">Гильдейский ремесленник</option>
+                <option value="Barbarian">Отшельник</option>
+                <option value="Barbarian">Благородный</option>
+                <option value="Barbarian">Чужеземец</option>
+                <option value="Barbarian">Мудрец</option>
+                <option value="Barbarian">Моряк</option>
+                <option value="Barbarian">Солдат</option>
+                <option value="Barbarian">Беспризорник</option>
               </select>
               <button class="button button--info">add</button>
             </div>
@@ -48,10 +65,15 @@
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn">
               <select class="select" name="CLASS" id="">
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Dwarf</option>
+                <option value="Barbarian">Elf</option>
+                <option value="Barbarian">Halfling</option>
+                <option value="Barbarian">Human</option>
+                <option value="Barbarian">Dragonborn</option>
+                <option value="Barbarian">Gnome</option>
+                <option value="Barbarian">Half-elf</option>
+                <option value="Barbarian">Half-orc</option>
+                <option value="Barbarian">Tieflieng</option>
               </select>
               <button class="button button--info">add</button>
             </div>
@@ -60,10 +82,15 @@
           <div class="firstrow_content">
             <div class="firstrow_content-textwithbtn">
               <select class="select" name="CLASS" id="">
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
-                <option value="Barbarian">Barbarian</option>
+                <option value="Barbarian">Законно добрые</option>
+                <option value="Barbarian">Нейтрально добрые</option>
+                <option value="Barbarian">Хаотично добрые</option>
+                <option value="Barbarian">Законно нейтральные</option>
+                <option value="Barbarian">Нейтральное</option>
+                <option value="Barbarian">Хаотично нейтральные</option>
+                <option value="Barbarian">Законно злые</option>
+                <option value="Barbarian">Нейтрально злое</option>
+                <option value="Barbarian">Хаотично злые</option>
               </select>
               <button class="button button--info">add</button>
             </div>

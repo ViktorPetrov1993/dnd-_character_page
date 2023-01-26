@@ -154,6 +154,7 @@
     <slot name="HelthBlock"> </slot>
     <slot name="PersonalityBlock"> </slot>
     <slot name="OtherProfeshions"> </slot>
+    <slot name="CharacterImg"> </slot>
   </section>
 </template>
 

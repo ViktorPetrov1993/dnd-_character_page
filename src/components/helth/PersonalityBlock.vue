@@ -57,10 +57,12 @@ export default {
 }
 .border_fivethblock,
 .mediumtextarea {
-  height: 330px;
+  height: 320px;
   border-radius: 12px;
 }
 textarea {
-  color: aqua;
+  color: black;
+  background: radial-gradient(#fff0e8, #9b472e);
+  border: 2px solid $border-color;
 }
 </style>

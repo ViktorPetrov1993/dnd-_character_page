@@ -67,11 +67,23 @@
         <div>
           <div class="textm">ARMOR</div>
           <select name="" id="" class="select">
-            <option value="Barbarian">Barbarian</option>
-            <option value="Barbarian">Barbarian</option>
-            <option value="Barbarian">Barbarian</option>
-            <option value="Barbarian">Barbarian</option>
+            <option value="Barbarian">Стёганный доспех \ 5зм</option>
+            <option value="Barbarian">Кожаный доспех \ 10зм</option>
+            <option value="Barbarian">Проклёпанная кожа \ 45зм</option>
+            <option value="Barbarian">Шкурный доспех \ 10зм</option>
+            <option value="Barbarian">Кольчужная рубаха \ 50зм</option>
+            <option value="Barbarian">Чешуйчатый доспех \ 50зм</option>
+            <option value="Barbarian">Кираса \ 400зм</option>
+            <option value="Barbarian">Полулаты \ 750зм</option>
+            <option value="Barbarian">Колечный доспех \ 30зм</option>
+            <option value="Barbarian">Кольчуга \ 75зм</option>
+            <option value="Barbarian">Наборный доспех \ 200зм</option>
+            <option value="Barbarian">Латы \ 1500 зм</option>
+            <option value="Barbarian">Магический доспех</option>
           </select>
+          <span class="textm">Shield</span>
+          <input type="checkbox" />
+          <input type="checkbox" />
         </div>
       </div>
       <div class="secondblock_bottompart">
@@ -93,6 +105,7 @@
         </div>
         <ul class="">
           <li
+            class="textm fw-400"
             v-for="n of weapon"
             :key="'weaponitem' + n"
             @click="removeWeapon(n)"

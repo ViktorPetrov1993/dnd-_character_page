@@ -20,6 +20,7 @@ export default {
   margin: 8px;
 }
 textarea {
-  color: aqua;
+  color: #f9c1a1;
+  background: none;
 }
 </style>

@@ -8,11 +8,13 @@
       <template v-slot:HelthBlock><HelthBlock /> </template>
       <template v-slot:PersonalityBlock><PersonalityBlock /> </template>
       <template v-slot:OtherProfeshions><OtherProfeshions /> </template>
+      <template v-slot:CharacterImg><CharacterImg /> </template>
     </StatsBlock>
     <AdditionalNotes />
+    <SpellList />
 
-    <!-- <SpeshButton @testEvent="test_met"
-    {{ test }}></SpeshButton> -->
+    <SpeshButton @testEvent="test_met" {{ test }}></SpeshButton>
+    <AbilityList />
   </div>
 </template>
 
@@ -26,8 +28,11 @@ import OtherProfeshions from "@/components/other/OtherProfeshions.vue";
 import CharacterName from "@/components/header/CharacterName.vue";
 import AdditionalNotes from "@/components/other/AdditionalNotes.vue";
 import MainStats from "@/components/stats/MainStats.vue";
+import CharacterImg from "@/components/CharacterImg.vue";
+import SpellList from "@/components/spells/SpellList.vue";
+import AbilityList from "@/components/abilitys/AbilityList.vue";
 
-// import SpeshButton from "@/components/SpeshButton.vue";
+import SpeshButton from "@/components/SpeshButton.vue";
 
 export default {
   name: "HomeView",
@@ -41,7 +46,10 @@ export default {
     CharacterName,
     AdditionalNotes,
     MainStats,
-    // SpeshButton,
+    SpeshButton,
+    CharacterImg,
+    SpellList,
+    AbilityList,
   },
   data() {
     return {
@@ -50,9 +58,9 @@ export default {
     };
   },
   methods: {
-    // test_met(value) {
-    //   this.test = value;
-    // },
+    test_met(value) {
+      this.test = value;
+    },
   },
 };
 </script>
@@ -74,8 +82,7 @@ body {
 .textll,
 .textlx,
 .textxxl {
-  color: #6ce8e8;
-  background: #0b1813;
+  color: #f9c1a1;
   border-radius: 12px;
   padding: 0 4px;
 }

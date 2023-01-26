@@ -1,29 +1,29 @@
-<!-- <template>
-  <button
+<template>
+  <!-- <button
     @click="emitText"
     :class="[
       'button',
       { 'button--primary': isPrimary },
-      { 'button--secondary': isSecondary },
+      // { 'button--secondary': isSecondary },
       { 'button--danger': isDanger },
     ]"
   >
     BUTTON TO TEST
-  </button>
-  <div v-for="n in testdata" :key="n">{{ n.Description }}</div>
+  </button> -->
+  <div class="textm" v-for="n in testdata" :key="n">{{ n }}</div>
 </template>
 
 <script>
 export default {
   name: "theme-button",
-  //   props: [
-  //     "isPrimary",
-  //     "isSecondary",
-  //     "isDanger",
-  //     "isSucess",
-  //     "isWarning",
-  //     "isInfo",
-  //   ],
+  // props: [
+  //   "isPrimary",
+  //   "isSecondary",
+  // "isDanger",
+  //   //     "isSucess",
+  //   //     "isWarning",
+  //   //     "isInfo",
+  // ],
   props: {
     isPrimary: Boolean,
     isDanger: Boolean,
@@ -44,15 +44,15 @@ export default {
       );
     },
     getItems() {
-      fetch("https://api.publicapis.org/entries")
+      fetch("https://www.dnd5eapi.co/api/spells/aid")
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           console.log("ЧИСТЫЕ ДАННЫЕ С СЕРВЕРА: ", data);
-          this.testdata = data.entries;
+          this.testdata = data.desc;
         });
     },
   },
 };
-</script> -->
+</script>
