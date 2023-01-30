@@ -1,56 +1,49 @@
 <template>
-  <!-- <button
-    @click="emitText"
-    :class="[
-      'button',
-      { 'button--primary': isPrimary },
-      // { 'button--secondary': isSecondary },
-      { 'button--danger': isDanger },
-    ]"
+  <div>
+    <input type="text" v-model="search" placeholder="Search spell..." />
+    <ul v-if="testdata == !null">
+      <li v-for="testdata in filteredList" :key="testdata">
+        {{ n.index }}
+      </li>
+    </ul>
+  </div>
+  <router-link
+    :to="'/spell/' + n.index"
+    class="textm"
+    v-for="n in testdata"
+    :key="n"
+    >{{ n.index }}</router-link
   >
-    BUTTON TO TEST
-  </button> -->
-  <div class="textm" v-for="n in testdata" :key="n">{{ n }}</div>
 </template>
 
 <script>
 export default {
   name: "theme-button",
-  // props: [
-  //   "isPrimary",
-  //   "isSecondary",
-  // "isDanger",
-  //   //     "isSucess",
-  //   //     "isWarning",
-  //   //     "isInfo",
-  // ],
-  props: {
-    isPrimary: Boolean,
-    isDanger: Boolean,
-  },
   data() {
     return {
       testdata: null,
+      search: "",
     };
   },
-  mounted() {
-    this.getItems();
+  beforeMount() {
+    this.getSpells();
+  },
+  computed: {
+    filteredList() {
+      return this.testdata.filter((testdata) => {
+        return testdata.index.indexOf(this.search) > -1;
+      });
+    },
   },
   methods: {
-    emitText() {
-      this.$emit(
-        "testEvent",
-        "sddgijshjfoglknsdoifjgnspdfokgspodknfgposdfkngposdngijsnfdg"
-      );
-    },
-    getItems() {
-      fetch("https://www.dnd5eapi.co/api/spells/aid")
+    getSpells() {
+      fetch("https://www.dnd5eapi.co/api/spells")
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           console.log("ЧИСТЫЕ ДАННЫЕ С СЕРВЕРА: ", data);
-          this.testdata = data.desc;
+          this.testdata = data.results;
         });
     },
   },

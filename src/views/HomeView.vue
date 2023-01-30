@@ -12,8 +12,7 @@
     </StatsBlock>
     <AdditionalNotes />
     <SpellList />
-
-    <SpeshButton @testEvent="test_met" {{ test }}></SpeshButton>
+    <SpeshButton></SpeshButton>
     <AbilityList />
   </div>
 </template>
@@ -31,7 +30,6 @@ import MainStats from "@/components/stats/MainStats.vue";
 import CharacterImg from "@/components/CharacterImg.vue";
 import SpellList from "@/components/spells/SpellList.vue";
 import AbilityList from "@/components/abilitys/AbilityList.vue";
-
 import SpeshButton from "@/components/SpeshButton.vue";
 
 export default {
@@ -57,11 +55,7 @@ export default {
       isActive: true,
     };
   },
-  methods: {
-    test_met(value) {
-      this.test = value;
-    },
-  },
+  methods: {},
 };
 </script>
 
